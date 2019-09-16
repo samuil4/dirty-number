@@ -80,4 +80,15 @@ describe('string to number with use custom Separator configuration', () => {
     expect(num5).toEqual(omitNegativeDelimiter);
     expect(num6).toEqual(omitNegativeDelimiterWithFraction);
   });
+
+  describe('string to number with weird config', () => {
+    it('should parse string to correct type number with denominator ,', () => {
+      const dNumber = new DirtyNumber({
+        denominator: ','
+      });
+  
+      const num1 = dNumber.parse('3,14');
+      expect(num1).toEqual(piFixed2);
+    });
+  });
 });

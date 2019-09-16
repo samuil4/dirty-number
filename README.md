@@ -82,6 +82,21 @@ const numberParser = new DirtyNumber({
 numberParser.parse('1#000#000.45') // => 1000000.45 as Number
 ```
 
+## Weird examples
+```typescript
+//ES6 / TypeScript
+// Denominator ,
+
+import { DirtyNumber } from '@samuil4/dirty-number';
+
+const numberParser = new DirtyNumber({
+  denominator: ','
+});
+
+const num = numberParser.parse('3,14'); // => 3.14
+```
+
+
 ## Local Development
 1. Fork the project and clone it locally
 2. `npm install` to install the library dependencies
